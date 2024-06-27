@@ -1,2 +1,2 @@
-#Fritachi
-The Shadow Hukage (Backend Server) of Freeknct website
+# Fritachi
+The Shadow Hokage (Backend Server) of Freeknct website
