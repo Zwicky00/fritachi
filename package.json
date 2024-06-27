@@ -1,0 +1,14 @@
+{
+  "name": "fritachi",
+  "version": "1.0.0",
+  "description": "Backend server for freeknect website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sreekara Madyastha K",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
