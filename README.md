@@ -28,16 +28,16 @@ And start the server
     npm start
 Set public and private keys for RSA encryption
 
-  openssl genpkey -algorithm RSA -out private.pem -aes256
-  openssl rsa -pubout -in private.pem -out public.pem
+    openssl genpkey -algorithm RSA -out private.pem -aes256
+    openssl rsa -pubout -in private.pem -out public.pem
 
 Set Environment Variables by creating .env file in the root directory of the repository and fill
 
-  PORT = port number of the server,
-  MONGO_URL = link to the mongo db server, 
-  GOOGLE_OAUTH_REDIRECT_URL, 
-  GOOGLE_CLIENT_SECRET, 
-  GOOGLE_CLIENT_ID 
+    PORT = port number of the server,
+    MONGO_URL = link to the mongo db server, 
+    GOOGLE_OAUTH_REDIRECT_URL, 
+    GOOGLE_CLIENT_SECRET, 
+    GOOGLE_CLIENT_ID 
 
 ## Authors
 
