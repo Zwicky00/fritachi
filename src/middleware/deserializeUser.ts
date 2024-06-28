@@ -6,21 +6,19 @@ import { reIssueAccessToken } from "../service/sessionService";
 const deserializeUser = async (
   req: Request,
   res: Response,
-  next: NextFunction
+  next: NextFunction,
 ) => {
-  const accessToken = get(req, "cookies.accessToken") || get(req, "headers.x-access-token");
-  console.log('ACCESS TOKEN OBTAINED ',accessToken);
+  const accessToken =
+    get(req, "cookies.accessToken") || get(req, "headers.x-access-token");
   const refreshToken =
     get(req, "cookies.refreshToken") || get(req, "headers.x-refresh");
 
   if (!accessToken) {
     return next();
   }
-
   const { decoded, expired } = verifyJwt(accessToken);
 
   if (decoded) {
-    console.log('USER IS NOT EXPIRED ',decoded);
     res.locals.user = decoded;
     return next();
   }

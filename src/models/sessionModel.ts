@@ -17,7 +17,7 @@ const sessionSchema = new mongoose.Schema(
   },
   {
     timestamps: true,
-  }
+  },
 );
 
 const SessionModel = mongoose.model<SessionDocument>("Session", sessionSchema);

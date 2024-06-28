@@ -1,11 +1,10 @@
 import jwt from "jsonwebtoken";
-import dotenv from 'dotenv';
+import dotenv from "dotenv";
 dotenv.config();
-const fs = require('fs');
+const fs = require("fs");
 
-const privateKey = fs.readFileSync('private.pem', 'utf8');
-const publicKey = fs.readFileSync('public.pem', 'utf8');
-
+const privateKey = fs.readFileSync("private.pem", "utf8");
+const publicKey = fs.readFileSync("public.pem", "utf8");
 
 export function signJwt(object: Object, options?: jwt.SignOptions | undefined) {
   return jwt.sign(object, privateKey, {
