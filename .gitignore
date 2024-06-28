@@ -1,1 +1,7 @@
 node_modules
+
+# Environment Variables
+.env
+
+private.pem
+public.pem
