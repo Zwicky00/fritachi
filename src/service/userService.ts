@@ -3,7 +3,7 @@ import { GOOGLE_TOKEN_URL, GOOGLE_USER_INFO_URL } from "../constants";
 import qs from "qs";
 import log from "../utils/logger";
 import { FilterQuery, QueryOptions, UpdateQuery } from "mongoose";
-import UserModel, { UserDocument } from "../models/userModel";
+import User, { UserDocument } from "../models/userModel";
 
 interface GoogleTokensResult {
   access_token: string;
@@ -79,7 +79,7 @@ export async function findAndUpdateUser(
   options: QueryOptions = {},
 ) {
   try {
-    const updatedUser = await UserModel.findOneAndUpdate(
+    const updatedUser = await User.findOneAndUpdate(
       filter,
       update,
       options,
@@ -92,5 +92,5 @@ export async function findAndUpdateUser(
 }
 
 export async function findUser(query: FilterQuery<UserDocument>) {
-  return UserModel.findOne(query).lean();
+  return User.findOne(query).lean();
 }

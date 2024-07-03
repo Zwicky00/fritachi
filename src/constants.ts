@@ -4,3 +4,8 @@ export const GOOGLE_USER_INFO_URL =
 
 export const ACCESS_TOKEN_TTL = "15m";
 export const REFRESH_TOKEN_TTL = "1y";
+
+export enum CHAT_TYPE {
+  USER = 'User',
+  COMMUNITY = 'Community'
+}

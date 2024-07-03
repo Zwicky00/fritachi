@@ -6,7 +6,7 @@ import { reIssueAccessToken } from "../service/sessionService";
 const deserializeUser = async (
   req: Request,
   res: Response,
-  next: NextFunction,
+  next: NextFunction
 ) => {
   const accessToken =
     get(req, "cookies.accessToken") || get(req, "headers.x-access-token");
@@ -16,9 +16,9 @@ const deserializeUser = async (
   if (!accessToken) {
     return next();
   }
-  const { decoded, expired } = verifyJwt(accessToken);
+  const { valid, expired, decoded } = verifyJwt(accessToken);
 
-  if (decoded) {
+  if (valid) {
     res.locals.user = decoded;
     return next();
   }

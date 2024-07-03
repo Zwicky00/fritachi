@@ -1,6 +1,6 @@
 import { get } from "lodash";
 import { signJwt, verifyJwt } from "../utils/jwtUtils";
-import SessionModel from "../models/sessionModel";
+import Session from "../models/sessionModel";
 import { ACCESS_TOKEN_TTL } from "../constants";
 import { findUser } from "./userService";
 import mongoose from "mongoose";
@@ -14,7 +14,7 @@ export async function reIssueAccessToken({
 
   if (!decoded || !get(decoded, "session")) return false;
 
-  const session = await SessionModel.findById(get(decoded, "session"));
+  const session = await Session.findById(get(decoded, "session"));
 
   if (!session || !session.valid) return false;
 
@@ -34,6 +34,6 @@ export async function createSession(
   userId: mongoose.Types.ObjectId,
   userAgent: string,
 ) {
-  const session = await SessionModel.create({ user: userId, userAgent });
+  const session = await Session.create({ user: userId, userAgent });
   return session.toJSON();
 }

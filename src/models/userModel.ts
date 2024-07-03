@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { CHAT_TYPE } from "../constants";
 
 export interface UserDocument extends mongoose.Document {
   email: string;
@@ -19,5 +20,5 @@ const UserSchema = new mongoose.Schema(
   },
 );
 
-const UserModel = mongoose.model<UserDocument>("User", UserSchema);
-export default UserModel;
+const User = mongoose.model<UserDocument>("User", UserSchema);
+export default User;
