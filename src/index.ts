@@ -66,7 +66,6 @@ io.on("connection", (socket: Socket) => {
   socket.on("message", async (message: any) => {
     try {
       const response = await handleMessage(message);
-
       console.log(response.newMessage);
       const receiverKind = response.savedChat?.kind;
       if (receiverKind === CHAT_TYPE.USER) {

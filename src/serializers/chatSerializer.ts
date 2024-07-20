@@ -10,6 +10,7 @@ export interface addChatRequest {
 }
 
 export function addChatSerializer(data: addChatRequest) {
+  console.log("content     ", data.content);
   const finalFilters: any = {
     kind: data.kind,
     members: [],
